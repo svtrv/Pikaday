@@ -256,6 +256,7 @@
         incrementHourBy: 1,
         incrementMinuteBy: 1,
         incrementSecondBy: 1,
+        timeLabel: null,
 
         // option to prevent calendar from auto-closing after date is selected
         autoClose: true,
@@ -443,6 +444,7 @@
     renderTime = function(hh, mm, ss, opts)
     {
         var to_return = '<table cellpadding="0" cellspacing="0" class="pika-time"><tbody><tr>' +
+            (opts.timeLabel !== null ? '<td class="pika-time-label">'+opts.timeLabel+'</td>' : '') +
             renderTimePicker(24, hh, 'pika-select-hour', function(i) {
                 if (opts.use24hour) {
                     return i;
