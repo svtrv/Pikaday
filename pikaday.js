@@ -180,7 +180,6 @@
      * defaults and localisation
      */
     defaults = {
-
         // bind the picker to a form field
         field: null,
 
@@ -251,6 +250,7 @@
 
         // time
         showTime: true,
+        showMinutes: true,
         showSeconds: false,
         use24hour: false,
         incrementHourBy: 1,
@@ -462,9 +462,12 @@
                     }
                 }
             },
-            opts.incrementHourBy) +
-            '<td>:</td>' +
-            renderTimePicker(60, mm, 'pika-select-minute', function(i) { if (i < 10) return "0" + i; return i }, opts.incrementMinuteBy);
+            opts.incrementHourBy);
+
+        if (opts.showMinutes) {
+          to_return += '<td>:</td>' +
+              renderTimePicker(60, mm, 'pika-select-minute', function(i) { if (i < 10) return "0" + i; return i }, opts.incrementMinuteBy);
+        }
 
         if (opts.showSeconds) {
             to_return += '<td>:</td>' +
@@ -728,8 +731,6 @@
      * public Pikaday API
      */
     Pikaday.prototype = {
-
-
         /**
          * configure functionality
          */
