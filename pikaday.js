@@ -497,11 +497,12 @@
                             target.getAttribute('data-pika-day')
                         );
                     // Preserve time selection when date changed
-                    if (self._d && opts.showTime) {
-                        newDate.setHours(self._d.getHours());
-                        newDate.setMinutes(self._d.getMinutes());
+                    var prevDate = self._d || opts.defaultDate;
+                    if (prevDate && isDate(prevDate) && opts.showTime) {
+                        newDate.setHours(prevDate.getHours());
+                        newDate.setMinutes(prevDate.getMinutes());
                         if (opts.showSeconds) {
-                            newDate.setSeconds(self._d.getSeconds());
+                            newDate.setSeconds(prevDate.getSeconds());
                         }
                     }
                     self.setDate(newDate);
@@ -1026,11 +1027,12 @@
             }
 
             if (opts.showTime) {
+                var prevDate = this._d || this._o.defaultDate;
                 html += '<div class="pika-time-container">' +
                         renderTime(
-                            this._d ? this._d.getHours() : 0,
-                            this._d ? this._d.getMinutes() : 0,
-                            this._d ? this._d.getSeconds() : 0,
+                            prevDate && isDate(prevDate) ? prevDate.getHours() : 0,
+                            prevDate && isDate(prevDate) ? prevDate.getMinutes() : 0,
+                            prevDate && isDate(prevDate) ? prevDate.getSeconds() : 0,
                             opts)
                     + '</div>';
             }
