@@ -11,6 +11,7 @@ incrementHourBy: 1
 incrementMinuteBy: 1
 incrementSecondBy: 1
 autoClose: true
+timeLabel: null
 ```
 
 ### Time support added to [dbushell/Pikaday][david Pika]
