@@ -226,3 +226,10 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 .pika-time {
     margin: 7px auto 7px;
 }
+
+.pika-time .pika-time-label {
+    font-weight: bold;
+    font-size: 11px;
+    color: #666;
+    padding-right: 0.33em;
+}
