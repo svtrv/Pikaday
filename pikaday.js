@@ -976,7 +976,7 @@
          */
         setMaxDate: function(value)
         {
-            setToStartOfDay(value);
+            if (!this._o.showTime) setToStartOfDay(value);
             this._o.maxDate = value;
             this._o.maxYear = value.getFullYear();
             this._o.maxMonth = value.getMonth();
@@ -1150,8 +1150,8 @@
                     isStartRange = opts.startRange && compareDates(opts.startRange, day),
                     isEndRange = opts.endRange && compareDates(opts.endRange, day),
                     isInRange = opts.startRange && opts.endRange && opts.startRange < day && day < opts.endRange,
-                    isDisabled = (opts.minDate && day < opts.minDate) ||
-                                 (opts.maxDate && day > opts.maxDate) ||
+                    isDisabled = (minDate_date && day < minDate_date) ||
+                                 (maxDate_date && day > maxDate_date) ||
                                  (opts.disableWeekends && isWeekend(day)) ||
                                  (opts.disableDayFn && opts.disableDayFn(day));
 
