@@ -14,6 +14,15 @@ autoClose: true
 timeLabel: null // optional string added to left of time select
 ```
 
+### i18n changes
+```javascript
+en: {
+...
+midnight: '', // Label for 0 AM
+noon: '', // Label for 12 AM
+}
+```
+
 ### Time support added to [dbushell/Pikaday][david Pika]
 
 This fork allows the user to specify the time along with their date. Done so by adding a couple select inputs to manipulate the date Pikaday is generating.
