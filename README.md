@@ -5,6 +5,7 @@ Pikaday - With Time Picker
 
 ```javascript
 showTime: true
+showMinutes: true
 showSeconds: false
 use24hour: false
 incrementHourBy: 1
