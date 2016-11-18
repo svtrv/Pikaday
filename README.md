@@ -13,6 +13,12 @@ incrementMinuteBy: 1
 incrementSecondBy: 1
 autoClose: true
 timeLabel: null // optional string added to left of time select
+i18n: {
+  en: {
+    midnight: '', // Label for 0 AM
+    noon: '', // Label for 12 AM
+  }
+}
 ```
 
 ### Time support added to [dbushell/Pikaday][david Pika]
